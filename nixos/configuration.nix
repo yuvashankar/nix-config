@@ -97,7 +97,11 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # Use nvidia drivers
+  services.xserver = {
+    enable = true;
+    videoDrivers = ["nvidia"];
+  };
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
@@ -127,9 +131,12 @@
     #media-session.enable = true;
   };
 
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+  };
+  # system-wide user settings (groups, etc).
   users.users = {
-    # FIXME: Replace with your username
     yuvashankar = {
       description = "Vinay Yuvashankar";
       # TODO: You can set an initial password for your user.
@@ -140,7 +147,7 @@
       openssh.authorizedKeys.keys = [
         # TODO: Add your SSH public key(s) here, if you plan on using SSH to connect
       ];
-      # TODO: Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
+      # Be sure to add any other groups you need (such as networkmanager, audio, docker, etc)
       extraGroups = ["networkmanager" "wheel" "users"];
     };
   };
