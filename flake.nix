@@ -75,12 +75,13 @@
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
       # FIXME replace with your username@hostname
-      "yuvashankar@overkill" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+      "yuvashankar@overkill" = lib.homeManagerConfiguration {
+        # pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/home.nix
+          ./home/yuvashankar/overkill.nix
         ];
       };
     };
