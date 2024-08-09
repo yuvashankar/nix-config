@@ -7,6 +7,7 @@
     [
       inputs.home-manager.nixosModules.home-manager
       ./nix.nix
+      ./locale.nix
     ]
     ++ (builtins.attrValues outputs.nixosModules);
 
