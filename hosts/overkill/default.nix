@@ -15,9 +15,10 @@
 
     # Enable audio
     ../common/optional/pipewire.nix
-
     # Add Desktop Environment
     ../common/optional/kde.nix
+    # Enable Printing
+    ../common/optional/printer.nix
 
     # Users
     ../common/users/yuvashankar
@@ -34,8 +35,6 @@
   };
 
   services = {
-    # Enable CUPS to print documents.
-    printing.enable = true;
     # Enable the X11 windowing system.
     xserver = {
       xkb = {
@@ -48,6 +47,18 @@
   hardware.opengl = {
     enable = true;
     driSupport = true;
+  };
+
+  hardware.printers = {
+    ensurePrinters = [
+      {
+        name = "Brother-HL-L2370DW";
+        location = "Home";
+        deviceUri = "ipp://192.168.2.10";
+        model = "drv:///cupsfilters.drv/pwgrast.ppd";
+      }
+    ];
+    ensureDefaultPrinter = "Brother-HL-L2370DW";
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
