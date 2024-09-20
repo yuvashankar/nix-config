@@ -53,7 +53,7 @@
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  home.packages = with pkgs; [firefox steam vim vscodium alejandra];
+  home.packages = with pkgs; [alejandra chromium firefox steam sublime vim vscodium];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;

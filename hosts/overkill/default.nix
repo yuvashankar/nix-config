@@ -19,7 +19,6 @@
     ../common/optional/kde.nix
     # Enable Printing
     ../common/optional/printer.nix
-
     # Users
     ../common/users/yuvashankar
   ];

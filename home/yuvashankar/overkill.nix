@@ -2,10 +2,10 @@
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   inputs,
-  outputs,
   lib,
-  config,
   pkgs,
+  config,
+  outputs,
   ...
 }: {
   # You can import other home-manager modules here
@@ -53,7 +53,7 @@
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  home.packages = with pkgs; [firefox steam vim vscodium zed-editor alejandra gwenview];
+  home.packages = with pkgs; [alejandra gwenview chromium firefox libreoffice-qt steam sublime vim vscodium];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
