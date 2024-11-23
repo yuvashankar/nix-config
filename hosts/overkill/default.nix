@@ -5,16 +5,18 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-
     ../common/global
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-pc-ssd
     # For some reason nVidia Prime sync is enabled for common-gpu-nvidia
     # inputs.hardware.nixosModules.common-gpu-nvidia
     ../common/optional/nvidia.nix
-
-    # Enable audio
+    # Enable Bluettoth
+    ../common/optional/bluetooth.nix
+    # Enable pipewire audio
     ../common/optional/pipewire.nix
+    # Enable Pulse audio, mutually exclusive to pipewire
+    # ../common/optional/pulseaudio.nix
     # Add Desktop Environment
     ../common/optional/kde.nix
     # Enable Printing
