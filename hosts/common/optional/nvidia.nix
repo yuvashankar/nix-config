@@ -1,11 +1,9 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
-}: {
+# The nVidia Driver is garbage for the 2080 Super, the system cannot resume after a suspend.
+# The only way I've been able to fix this is to disable suspend entirely.
+{config, ...}: {
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
+  boot.kernelParams = ["module_blacklist=amdgpu"];
 
   hardware.nvidia = {
     # Modesetting is required.
@@ -28,7 +26,7 @@
     # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus
     # Only available from driver 515.43.04+
     # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = false;
+    open = true;
 
     # Enable the Nvidia settings menu,
     # accessible via `nvidia-settings`.

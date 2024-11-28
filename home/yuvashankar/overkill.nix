@@ -18,6 +18,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
+    ../features/productivity/common
   ];
 
   nixpkgs = {
@@ -45,7 +46,6 @@
     };
   };
 
-  # TODO: Set your username
   home = {
     username = "yuvashankar";
     homeDirectory = "/home/yuvashankar";
@@ -54,7 +54,6 @@
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
-    alejandra
     gwenview
     chromium
     firefox
@@ -62,14 +61,19 @@
     steam
     sublime
     vim
-    vscodium
-    # RPCS3
+    # For VSCodium
+    alejandra
+    nixd
+    direnv
+    # RPCS3 - also requires pulse audio for some reason.
     rpcs3
     dualsensectl
+    # Nix LSP
   ];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
+  # programs.bash.enable = true;
   programs.git = {
     enable = true;
     userName = "yuvashankar";

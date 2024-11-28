@@ -1,5 +1,5 @@
 {
-  #   security.rtkit.enable = false;
+  security.rtkit.enable = true;
   # Disable pulseaudio if enabling pipewire
   hardware.pulseaudio = {
     enable = true;
