@@ -1,8 +1,4 @@
-{
-  config,
-  inputs,
-  ...
-}: {
+{...}: {
   services = {
     printing.enable = true;
     avahi = {

@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ../common/global
@@ -42,9 +46,9 @@
     };
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
+    # driSupport = true;
   };
 
   hardware.printers = {
@@ -74,6 +78,9 @@
       value = "unlimited";
     }
   ];
+
+  # environment.systemPackages = [pkgs.kdePackages.partitionmanager];
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "24.05";
 }

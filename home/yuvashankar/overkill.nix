@@ -54,21 +54,27 @@
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [
-    gwenview
+    # Browsers
     chromium
     firefox
+    # Productivity
     libreoffice-qt
-    steam
     sublime
     vim
+    # Gaming
+    steam
+    gwe
+    ## RPCS3 - also requires pulse audio for some reason.
+    rpcs3
+    dualsensectl
     # For VSCodium
     alejandra
     nixd
     direnv
-    # RPCS3 - also requires pulse audio for some reason.
-    rpcs3
-    dualsensectl
-    # Nix LSP
+    # KDE Packages
+    ## Photo Viewer
+    gwenview
+    partition-manager
   ];
 
   # Enable home-manager and git
@@ -84,5 +90,5 @@
   systemd.user.startServices = "sd-switch";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = "24.05";
+  home.stateVersion = "24.11";
 }
