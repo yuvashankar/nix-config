@@ -67,6 +67,7 @@
     ## RPCS3 - also requires pulse audio for some reason.
     rpcs3
     dualsensectl
+    nvtopPackages.full
     # For VSCodium
     alejandra
     nixd
@@ -75,6 +76,7 @@
     ## Photo Viewer
     gwenview
     partition-manager
+    kdePackages.kcalc
   ];
 
   # Enable home-manager and git
