@@ -10,7 +10,7 @@
         defaultSession = "plasma";
         sddm = {
           enable = true;
-          enableHidpi = true;
+          enableHidpi = false;
           wayland.enable = true;
         };
       };

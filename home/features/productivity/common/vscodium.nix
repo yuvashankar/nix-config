@@ -1,8 +1,4 @@
-{
-  pkgs,
-  # lib,
-  ...
-}: {
+{pkgs, ...}: {
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
@@ -19,7 +15,7 @@
       tamasfe.even-better-toml
     ];
     userSettings = {
-      "nix.serverPath" = "nixd";
+      "nix.serverPath" = "nil";
       "nix.enableLanguageServer" = true;
       "nixpkgs.expr" = "import <nixpkgs> {}";
       "formatting.command" = ["alejandra"];

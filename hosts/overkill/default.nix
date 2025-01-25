@@ -36,19 +36,8 @@
     networkmanager.enable = true;
   };
 
-  services = {
-    # Enable the X11 windowing system.
-    xserver = {
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
-    };
-  };
-
   hardware.graphics = {
     enable = true;
-    # driSupport = true;
   };
 
   hardware.printers = {
@@ -82,5 +71,5 @@
   # environment.systemPackages = [pkgs.kdePackages.partitionmanager];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }

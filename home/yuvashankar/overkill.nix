@@ -70,7 +70,8 @@
     nvtopPackages.full
     # For VSCodium
     alejandra
-    nixd
+    # nixd
+    nil
     direnv
     # KDE Packages
     ## Photo Viewer

@@ -9,19 +9,12 @@ in {
     gc = {
       automatic = true;
       dates = "weekly";
-      # Keep the last 5 generations
-      options = "--delete-older-than +5";
+      options = "--delete-older-than 15d";
     };
     settings = {
-      trusted-users = [
-        "root"
-        "@wheel"
-      ];
+      trusted-users = ["root" "@wheel"];
       auto-optimise-store = true;
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
+      experimental-features = ["nix-command" "flakes"];
     };
 
     # Add each flake input as a registry and nix_path
