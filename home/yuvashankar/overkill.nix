@@ -64,6 +64,7 @@
     # Gaming
     steam
     gwe
+    neovim
     ## RPCS3 - also requires pulse audio for some reason.
     rpcs3
     dualsensectl
