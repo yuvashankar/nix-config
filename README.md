@@ -1,5 +1,9 @@
 # nix-configs
 
+[!WARNING]
+The author has completely abandoned this repository in favour of [this](https://codeberg.org/yuvashankar/nix-config) repository.
+
+
 A repository containing the nix configuraions for my personal computer. Derived from the [nix-starter-configs](https://github.com/Misterio77/nix-starter-configs).
 
 * AMD 3600 XT 8-core CPU

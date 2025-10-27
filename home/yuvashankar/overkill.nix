@@ -7,7 +7,8 @@
   config,
   outputs,
   ...
-}: {
+}:
+{
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -89,7 +90,6 @@
   programs.git = {
     enable = true;
     userName = "yuvashankar";
-    userEmail = "vinay.yuvashankar@gmail.com";
   };
 
   # Nicely reload system units when changing configs
